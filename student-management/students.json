@@ -12,5 +12,12 @@
     "kelas": "XII RPL 2",
     "umur": 18,
     "alamat": "Jl. Kemerdekaan No. 456"
+  },
+  {
+    "id": 3,
+    "nama": "Rizky",
+    "kelas": "XI RPL 1",
+    "umur": 17,
+    "alamat": "Jl. Pahlawan No. 789"
   }
 ]
