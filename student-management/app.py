@@ -1,23 +1,50 @@
 import json
 
+
 with open("students.json", "r") as file:
     students = json.load(file)
 
 
-nama = input("Masukkan nama: ")
-kelas = input("Masukkan kelas: ")
-umur = int(input("Masukkan umur: "))
+while True:
+    print("\n=== STUDENT MANAGEMENT ===")
+    print("1. Lihat semua siswa")
+    print("2. Tambah siswa")
+    print("3. Keluar")
 
-new_student = {
-    "id": len(students) + 1,
-    "nama": nama,
-    "kelas": kelas,
-    "umur": umur
-}
+    pilihan = input("Pilih menu: ")
 
-students.append(new_student)
+    if pilihan == "1":
+        print("\n=== DAFTAR SISWA ===")
 
-with open("students.json", "w") as file:
-    json.dump(students, file, indent=4)
+        for student in students:
+            print(f"ID     : {student['id']}")
+            print(f"Nama   : {student['nama']}")
+            print(f"Kelas  : {student['kelas']}")
+            print(f"Umur   : {student['umur']}")
+            print("-" * 30)
 
-print("Siswa berhasil ditambahkan!")
+    elif pilihan == "2":
+        nama = input("Masukkan nama: ")
+        kelas = input("Masukkan kelas: ")
+        umur = int(input("Masukkan umur: "))
+
+        new_student = {
+            "id": len(students) + 1,
+            "nama": nama,
+            "kelas": kelas,
+            "umur": umur
+        }
+
+        students.append(new_student)
+
+        with open("students.json", "w") as file:
+            json.dump(students, file, indent=4)
+
+        print("Siswa berhasil ditambahkan!")
+
+    elif pilihan == "3":
+        print("Program selesai.")
+        break
+
+    else:
+        print("Pilihan tidak tersedia.")
