@@ -9,7 +9,9 @@ while True:
     print("\n=== STUDENT MANAGEMENT ===")
     print("1. Lihat semua siswa")
     print("2. Tambah siswa")
-    print("3. Keluar")
+    print("3. Cari siswa")
+    print("4. Update siswa")
+    print("5. Keluar")
 
     pilihan = input("Pilih menu: ")
 
@@ -43,6 +45,52 @@ while True:
         print("Siswa berhasil ditambahkan!")
 
     elif pilihan == "3":
+        nama = input("Masukkan nama siswa yang dicari: ")
+
+        found = False
+
+        for student in students:
+            if student["nama"].lower() == nama.lower():
+                print("\n=== SISWA DITEMUKAN ===")
+                print(f"ID     : {student['id']}")
+                print(f"Nama   : {student['nama']}")
+                print(f"Kelas  : {student['kelas']}")
+                print(f"Umur   : {student['umur']}")
+
+                found = True
+
+        if not found:
+            print("Siswa tidak ditemukan.")
+
+    elif pilihan == "4":
+        id_siswa = int(input("Masukkan ID siswa yang ingin diupdate: "))
+
+        found = False
+
+        for student in students:
+            if student["id"] == id_siswa:
+                print("\n=== UPDATE SISWA ===")
+
+                nama = input("Masukkan nama baru: ")
+                kelas = input("Masukkan kelas baru: ")
+                umur = int(input("Masukkan umur baru: "))
+
+                student["nama"] = nama
+                student["kelas"] = kelas
+                student["umur"] = umur
+
+                with open("students.json", "w") as file:
+                    json.dump(students, file, indent=4)
+
+                print("Data siswa berhasil diupdate!")
+
+                found = True
+                break
+
+        if not found:
+            print("Siswa tidak ditemukan.")
+
+    elif pilihan == "5":
         print("Program selesai.")
         break
 
