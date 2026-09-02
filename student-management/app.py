@@ -11,7 +11,8 @@ while True:
     print("2. Tambah siswa")
     print("3. Cari siswa")
     print("4. Update siswa")
-    print("5. Keluar")
+    print("5. Hapus siswa")
+    print("6. Keluar")
 
     pilihan = input("Pilih menu: ")
 
@@ -91,6 +92,26 @@ while True:
             print("Siswa tidak ditemukan.")
 
     elif pilihan == "5":
+        id_siswa = int(input("Masukkan ID siswa yang ingin dihapus: "))
+
+        found = False
+
+        for student in students:
+            if student["id"] == id_siswa:
+                students.remove(student)
+
+                with open("students.json", "w") as file:
+                    json.dump(students, file, indent=4)
+
+                print("Siswa berhasil dihapus!")
+
+                found = True
+                break
+
+        if not found:
+            print("Siswa tidak ditemukan.")
+
+    elif pilihan == "6":
         print("Program selesai.")
         break
 
