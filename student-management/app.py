@@ -19,12 +19,15 @@ while True:
     if pilihan == "1":
         print("\n=== DAFTAR SISWA ===")
 
-        for student in students:
-            print(f"ID     : {student['id']}")
-            print(f"Nama   : {student['nama']}")
-            print(f"Kelas  : {student['kelas']}")
-            print(f"Umur   : {student['umur']}")
-            print("-" * 30)
+        if not students:
+            print("Belum ada data siswa.")
+        else:
+            for student in students:
+                print(f"ID     : {student['id']}")
+                print(f"Nama   : {student['nama']}")
+                print(f"Kelas  : {student['kelas']}")
+                print(f"Umur   : {student['umur']}")
+                print("-" * 30)
 
     elif pilihan == "2":
         nama = input("Masukkan nama: ")
