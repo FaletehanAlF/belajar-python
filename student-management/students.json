@@ -1,23 +1,29 @@
 [
-  {
-    "id": 1,
-    "nama": "Falen",
-    "kelas": "XI RPL 2",
-    "umur": 17,
-    "alamat": "Jl. Merdeka No. 123"
-  },
-  {
-    "id": 2,
-    "nama": "Kimmy",
-    "kelas": "XII RPL 2",
-    "umur": 18,
-    "alamat": "Jl. Kemerdekaan No. 456"
-  },
-  {
-    "id": 3,
-    "nama": "Rizky",
-    "kelas": "XI RPL 1",
-    "umur": 17,
-    "alamat": "Jl. Pahlawan No. 789"
-  }
+    {
+        "id": 1,
+        "nama": "Falen",
+        "kelas": "XI RPL 2",
+        "umur": 17,
+        "alamat": "Jl. Merdeka No. 123"
+    },
+    {
+        "id": 2,
+        "nama": "Kimmy",
+        "kelas": "XII RPL 2",
+        "umur": 18,
+        "alamat": "Jl. Kemerdekaan No. 456"
+    },
+    {
+        "id": 3,
+        "nama": "Rizky",
+        "kelas": "XI RPL 1",
+        "umur": 17,
+        "alamat": "Jl. Pahlawan No. 789"
+    },
+    {
+        "id": 4,
+        "nama": "falen ",
+        "kelas": "XII TJKT 2",
+        "umur": 18
+    }
 ]
